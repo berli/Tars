@@ -179,7 +179,6 @@ class TARSProtocol implements Protocol
                 // 完成所有的打包之后,开始编码
                 $cPacketType = 0;
                 $iMessageType = 0;
-                $iRequestId = 1; // 使用协程的id
                 $statuses = [];
 
                 $servantName = $unpackResult['sServantName'];
@@ -356,13 +355,13 @@ class TARSProtocol implements Protocol
                 // 如果是结构体
                 if ($type === 'map' || $type === 'vector') {
                     $$protoName = $this->createInstance($outParam['proto']);
-                    $args[] = &$$protoName;
+                    $args[] = $$protoName;
                 } elseif ($type === 'struct') {
                     $$protoName = new $outParam['proto']();
-                    $args[] = &$$protoName;
+                    $args[] = $$protoName;
                 } else {
                     $protoName = null;
-                    $args[] = &$protoName;
+                    $args[] = $protoName;
                 }
             }
 
