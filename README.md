@@ -46,3 +46,4 @@ The open-source protocol Tars used is BSD-3-Clause, see [LICENSE.TXT](LICENSE.TX
 
 qq group code：469331966
 
+sudo apt-get install bison flex libmysqlclient-dev sudo apt-get install gcc-multilib g++-multilib zlib1g-dev
